@@ -5,12 +5,6 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/go-resty/resty/v2"
-	"github.com/ppoonk/shy/app/api"
-	"github.com/ppoonk/shy/extras/trafficlogger"
-	"github.com/shirou/gopsutil/cpu"
-	"github.com/shirou/gopsutil/disk"
-	"github.com/shirou/gopsutil/mem"
 	"io"
 	"log"
 	"net"
@@ -19,13 +13,20 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/go-resty/resty/v2"
+	"github.com/ppoonk/shy/app/api"
+	"github.com/ppoonk/shy/extras/trafficlogger"
+	"github.com/shirou/gopsutil/cpu"
+	"github.com/shirou/gopsutil/disk"
+	"github.com/shirou/gopsutil/mem"
 )
 
 const (
-	getNodeInfo         = "/api/airgo/node/getNodeInfo"
-	getUserlist         = "/api/airgo/user/getUserlist"
-	reportUserTraffic   = "/api/airgo/user/reportUserTraffic"
-	reportNodeStatus    = "/api/airgo/node/reportNodeStatus"
+	getNodeInfo         = "/api/public/airgo/node/getNodeInfo"
+	getUserlist         = "/api/public/airgo/user/getUserlist"
+	reportUserTraffic   = "/api/public/airgo/user/reportUserTraffic"
+	reportNodeStatus    = "/api/public/airgo/node/reportNodeStatus"
 	HyTrafficStats      = "http://127.0.0.1:7654/traffic"         //默认流量统计 API
 	HyTrafficStatsClear = "http://127.0.0.1:7654/traffic?clear=1" //默认流量统计 API
 )
