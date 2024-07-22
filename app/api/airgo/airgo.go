@@ -85,7 +85,7 @@ func (a *ApiClient) GetNodeInfo() (*api.NodeInfo, error) {
 	return &api.NodeInfo{
 		NodeID:     a.Panel.NodeID,
 		Port:       nodeInfo.Port,
-		SpeedLimit: nodeInfo.NodeSpeedlimit,
+		SpeedLimit: nodeInfo.NodeSpeedLimit,
 		Host:       nodeInfo.Host,
 	}, nil
 
